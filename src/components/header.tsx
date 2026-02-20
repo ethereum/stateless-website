@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { navLinks } from "@/data/navigation";
+import { basePath } from "@/lib/base-path";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,12 +16,12 @@ export function Header() {
       <div className="mx-auto max-w-6xl px-4 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo/color-light.svg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${basePath}/logo/color-light.svg`}
               alt="Stateless Consensus"
               width={200}
               height={28}
-              priority
             />
           </Link>
 
