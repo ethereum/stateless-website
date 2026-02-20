@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { basePath } from "@/lib/base-path";
 import { BenefitCard } from "@/components/benefit-card";
 import { benefits } from "@/data/benefits";
 
@@ -37,13 +37,13 @@ function HeroSection() {
   return (
     <section className="py-20 lg:py-32 px-4">
       <div className="mx-auto max-w-6xl text-center">
-        <Image
-          src="/logo/color-light.svg"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${basePath}/logo/color-light.svg`}
           alt="Stateless Consensus"
           width={320}
           height={46}
           className="mx-auto mb-8"
-          priority
         />
         <p className="text-xl/8 text-text-muted max-w-xl mx-auto mb-10">
           Making Ethereum&apos;s state scalable, verifiable, durable.
