@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  /* EF Brand Colors */
+  --color-navy: #36364C;
+  --color-ef-yellow: #F9EC7B;
+  --color-ef-green: #54BC7A;
+  --color-ef-cyan: #0DAFD2;
+  --color-ef-blue: #667BBC;
+  --color-ef-purple: #9E69AC;
+  --color-ef-coral: #F58B77;
+
+  /* Pastel Variants */
+  --color-pastel-yellow: #FDF9D7;
+  --color-pastel-green: #CBEBD7;
+  --color-pastel-cyan: #B6E7F1;
+  --color-pastel-blue: #D1D7EB;
+  --color-pastel-purple: #E2D2E6;
+  --color-pastel-coral: #FCDCD6;
+
+  /* Semantic */
+  --color-text: #36364C;
+  --color-text-muted: #6B6B80;
+  --color-bg: #FAFAFA;
+  --color-bg-alt: #FFFFFF;
+  --color-border: #E8E6E3;
+
+  /* Fonts */
+  --font-heading: "Space Mono", monospace;
+  --font-body: "Libre Franklin", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  text-transform: lowercase;
+}
