@@ -5,6 +5,10 @@ import type { NextConfig } from "next";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
   typescript: {
     ignoreBuildErrors: false,
   },
