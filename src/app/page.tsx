@@ -46,8 +46,7 @@ function HeroSection() {
           priority
         />
         <p className="text-xl/8 text-text-muted max-w-xl mx-auto mb-10">
-          Making Ethereum blocks self-contained units of execution —
-          no state download required.
+          Making Ethereum&apos;s state scalable, verifiable, durable.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
