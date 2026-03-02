@@ -126,7 +126,7 @@ function CommunitySection() {
           >
             Stateless Consensus
           </a>{" "}
-          team, supported by the Applied Research Group, Robust Incentives
+          team, supported by the Robust Incentives
           Group, STEEL, DevOps, and Cryptography teams.
         </p>
         <p>
