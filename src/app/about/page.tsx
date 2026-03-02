@@ -6,29 +6,30 @@ import { PageHeader } from "@/components/page-header";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "What is Stateless Ethereum, why it matters, and how the community is building it.",
+    "How Ethereum's state works today, the problems it creates, and the research and protocol changes underway to fix them.",
 };
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 lg:px-8 py-16 lg:py-24">
       <PageHeader
-        title="About Stateless Ethereum"
-        description="An update to the Ethereum protocol that makes blocks self-contained units of execution."
+        title="About Ethereum's State"
+        description="How Ethereum's state works today, the problems it creates, and the research and protocol changes underway to fix them."
       />
 
-      <WhatIsSection />
-      <UseCasesSection />
+      <StateProblemSection />
+      <WorkstreamsSection />
+      <WhyItMattersSection />
       <CommunitySection />
       <BookCta />
     </div>
   );
 }
 
-function WhatIsSection() {
+function StateProblemSection() {
   return (
     <section className="mb-16">
-      <h2 className="text-xl/8 font-bold mb-6">What Is Stateless Ethereum?</h2>
+      <h2 className="text-xl/8 font-bold mb-6">The State Problem</h2>
       <div className="flex flex-col gap-4 text-base/7 text-text-muted">
         <p>
           Today, Ethereum validators must download and store the entire state of
@@ -37,46 +38,54 @@ function WhatIsSection() {
           computation.
         </p>
         <p>
-          Stateless Ethereum changes this by packaging all the data needed to
-          execute a block directly inside the block itself. Validators no longer
-          need to hold the full state; they receive a compact proof alongside
-          each block that lets them verify execution independently.
-        </p>
-        <p>
-          This requires migrating Ethereum&apos;s state tree from the current
-          Merkle Patricia Trie to a structure that produces smaller proofs — a
-          binary hash tree compatible with STARK compression. The transition uses
-          an overlay mechanism so the network can convert gradually without a
-          hard stop.
+          This state grows without bound. As it gets larger, IO becomes the
+          bottleneck for throughput, hardware requirements rise, and fewer
+          participants can afford to keep up — increasing centralization pressure
+          and concentrating block building among a small number of operators.
         </p>
       </div>
     </section>
   );
 }
 
-function UseCasesSection() {
+function WorkstreamsSection() {
   return (
     <section className="mb-16">
-      <h2 className="text-xl/8 font-bold mb-6">What Does This Unlock?</h2>
+      <h2 className="text-xl/8 font-bold mb-6">What We&apos;re Working On</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <UseCaseCard
-          title="Increasing the Gas Limit"
-          description="By proving the state efficiently in SNARKs, block verification time decouples from the gas limit. This removes the IO bottleneck that currently constrains throughput."
+          title="Statelessness"
+          description="Blocks carry compact proofs so validators don't need full state. Requires migrating the state tree to a binary hash tree (EIP-7864) compatible with STARK compression."
           accentColor="bg-pastel-cyan"
         />
         <UseCaseCard
-          title="Improved Decentralization"
-          description="Without requiring disk space to run a client, low-powered devices can join the network and contribute to its security — fulfilling The Verge's goal of simplifying block validation."
+          title="State Management"
+          description="Expiring old state, compressing unused data, repricing access based on recency, and optimizing storage layouts to keep the active state small and manageable."
+          accentColor="bg-pastel-purple"
+        />
+      </div>
+    </section>
+  );
+}
+
+function WhyItMattersSection() {
+  return (
+    <section className="mb-16">
+      <h2 className="text-xl/8 font-bold mb-6">Why This Matters</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <UseCaseCard
+          title="Scalability"
+          description="Efficient state proofs decouple block verification from the gas limit, removing the IO bottleneck and enabling higher throughput without centralization trade-offs."
+          accentColor="bg-pastel-cyan"
+        />
+        <UseCaseCard
+          title="Decentralization"
+          description="Keeping state manageable means more participants can run nodes. This strengthens censorship resistance and prevents block building from concentrating among a few large operators."
           accentColor="bg-pastel-green"
         />
         <UseCaseCard
-          title="State Expiry"
-          description="Statelessness makes it practical to expire old state, limiting the active state size and reducing the burden on validators over time."
-          accentColor="bg-pastel-purple"
-        />
-        <UseCaseCard
-          title="Trustless Light Clients"
-          description="Light clients can follow the chain directly without relying on centralized data providers, since all proof data travels with the block."
+          title="Self-Sovereignty"
+          description="Users and builders can verify state and participate in the network without relying on centralized infrastructure providers — reducing single points of failure and making the ecosystem more resilient."
           accentColor="bg-pastel-coral"
         />
       </div>

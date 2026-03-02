@@ -68,7 +68,7 @@ export const resourceCategories: ResourceCategory[] = [
     ],
   },
   {
-    label: "State Expiry",
+    label: "State Management",
     resources: [
       {
         title: "State Expiry: In-protocol vs. Out-of-protocol",
@@ -80,11 +80,6 @@ export const resourceCategories: ResourceCategory[] = [
         url: "https://ethresear.ch/t/compression-based-state-expiry/23443/1",
         type: "article",
       },
-    ],
-  },
-  {
-    label: "State Management",
-    resources: [
       {
         title: "Not all state is equal",
         url: "https://ethereum-magicians.org/t/not-all-state-is-equal/25508",

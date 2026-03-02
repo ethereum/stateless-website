@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { basePath } from "@/lib/base-path";
-import { BenefitCard } from "@/components/benefit-card";
-import { benefits } from "@/data/benefits";
 
 const featuredResources = [
+  {
+    title: "The Future of Ethereum's State",
+    author: "Stateless Consensus",
+    url: "https://blog.ethereum.org/2025/12/16/future-of-state",
+  },
   {
     title: "Why stateless?",
     author: "Dankrad Feist",
@@ -15,18 +18,13 @@ const featuredResources = [
     author: "Vitalik Buterin",
     url: "https://vitalik.eth.limo/general/2024/10/23/futures4.html",
   },
-  {
-    title: "Recipes for a Stateless Ethereum",
-    author: "Guillaume Ballet",
-    url: "https://www.youtube.com/watch?v=gfzkidjJf8g",
-  },
 ];
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
-      <BenefitsSection />
+      <WhyItMattersSection />
       <ResourcesPreview />
       <CommunitySection />
     </div>
@@ -71,21 +69,38 @@ function HeroSection() {
   );
 }
 
-function BenefitsSection() {
+function WhyItMattersSection() {
   return (
     <section className="py-16 lg:py-24 px-4 bg-bg-alt">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-2xl/9 font-bold text-center mb-4">
-          Why Statelessness Matters
+        <h2 className="text-2xl/9 font-bold text-center mb-12">
+          Why This Matters
         </h2>
-        <p className="text-text-muted text-center max-w-2xl mx-auto mb-12">
-          Stateless Ethereum brings scalability, decentralization, and new
-          features by making blocks carry all the data needed for execution.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {benefits.map((benefit) => (
-            <BenefitCard key={benefit.title} {...benefit} />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-pastel-cyan rounded-sm p-6">
+            <h3 className="text-base/7 font-bold mb-2">Scalability</h3>
+            <p className="text-sm/6 text-text-muted">
+              Efficient state proofs decouple block verification from the gas
+              limit, removing the IO bottleneck and enabling higher throughput
+              without centralization trade-offs.
+            </p>
+          </div>
+          <div className="bg-pastel-green rounded-sm p-6">
+            <h3 className="text-base/7 font-bold mb-2">Decentralization</h3>
+            <p className="text-sm/6 text-text-muted">
+              Keeping state manageable means more participants can run nodes.
+              This strengthens censorship resistance and prevents block building
+              from concentrating among a few large operators.
+            </p>
+          </div>
+          <div className="bg-pastel-coral rounded-sm p-6">
+            <h3 className="text-base/7 font-bold mb-2">Self-Sovereignty</h3>
+            <p className="text-sm/6 text-text-muted">
+              Users and builders can verify state and participate in the network
+              without relying on centralized infrastructure providers — reducing
+              single points of failure and making the ecosystem more resilient.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -97,7 +112,7 @@ function ResourcesPreview() {
     <section className="py-16 lg:py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl/9 font-bold">Latest Resources</h2>
+          <h2 className="text-2xl/9 font-bold">Resources</h2>
           <Link
             href="/resources"
             className="font-heading text-sm/6 text-ef-cyan hover:text-ef-cyan/80 inline-flex items-center gap-1 transition-colors"
@@ -140,8 +155,9 @@ function CommunitySection() {
           Get Involved
         </h2>
         <p className="text-text-muted max-w-xl mx-auto mb-8">
-          Stateless Ethereum is built by a diverse community of researchers,
-          developers, and contributors. Interested in contributing?
+          Built by a diverse community of researchers, developers, and
+          contributors working on Ethereum&apos;s state. Interested in
+          contributing?
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
