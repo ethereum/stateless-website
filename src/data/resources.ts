@@ -14,7 +14,7 @@ export interface ResourceCategory {
 
 export const resourceCategories: ResourceCategory[] = [
   {
-    label: "introductory material",
+    label: "Statelessness",
     resources: [
       {
         title: "Why stateless?",
@@ -35,10 +35,80 @@ export const resourceCategories: ResourceCategory[] = [
         url: "https://vitalik.eth.limo/general/2021/06/18/verkle.html",
         type: "article",
       },
+      {
+        title: "The Future of Ethereum's State",
+        author: "Stateless Consensus",
+        url: "https://blog.ethereum.org/2025/12/16/future-of-state",
+        type: "article",
+      },
+      {
+        title: "Overview of tree structure",
+        author: "Guillaume Ballet and Dankrad Feist",
+        url: "https://blog.ethereum.org/2021/12/02/verkle-tree-structure",
+        type: "article",
+      },
+      {
+        title: "Anatomy of a Verkle proof",
+        author: "Ignacio Hagopian",
+        url: "https://ihagopian.com/posts/anatomy-of-a-verkle-proof",
+        type: "article",
+      },
+      {
+        title: "Inner Product Argument",
+        author: "Dankrad Feist",
+        url: "https://dankradfeist.de/ethereum/2021/07/27/inner-product-arguments.html",
+        type: "article",
+      },
+      {
+        title: "PCS Multiproof",
+        author: "Dankrad Feist",
+        url: "https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html",
+        type: "article",
+      },
     ],
   },
   {
-    label: "video presentations",
+    label: "State Expiry",
+    resources: [
+      {
+        title: "State Expiry: In-protocol vs. Out-of-protocol",
+        url: "https://ethresear.ch/t/state-expiry-in-protocol-vs-out-of-protocol/23258",
+        type: "article",
+      },
+      {
+        title: "Compression-based state expiry",
+        url: "https://ethresear.ch/t/compression-based-state-expiry/23443/1",
+        type: "article",
+      },
+    ],
+  },
+  {
+    label: "State Management",
+    resources: [
+      {
+        title: "Not all state is equal",
+        url: "https://ethereum-magicians.org/t/not-all-state-is-equal/25508",
+        type: "article",
+      },
+      {
+        title: "The Future of State, Part 1: OOPSIE",
+        url: "https://ethresear.ch/t/the-future-of-state-part-1-oopsie-a-new-type-of-snap-sync-based-wallet-lightclient/23395",
+        type: "article",
+      },
+      {
+        title: "The Future of State, Part 2",
+        url: "https://ethresear.ch/t/the-future-of-state-part-2-beyond-the-myth-of-partial-statefulness-the-reality-of-zkevms/23396",
+        type: "article",
+      },
+      {
+        title: "VOPS: Validity-Only Partial Statelessness",
+        url: "https://ethresear.ch/t/a-pragmatic-path-towards-validity-only-partial-statelessness-vops/22236",
+        type: "article",
+      },
+    ],
+  },
+  {
+    label: "Talks & Presentations",
     resources: [
       {
         title: "Anatomy of a stateless client",
@@ -91,35 +161,7 @@ export const resourceCategories: ResourceCategory[] = [
     ],
   },
   {
-    label: "advanced material",
-    resources: [
-      {
-        title: "Overview of tree structure",
-        url: "https://blog.ethereum.org/2021/12/02/verkle-tree-structure",
-        type: "article",
-      },
-      {
-        title: "Anatomy of a Verkle proof",
-        author: "Ignacio Hagopian",
-        url: "https://ihagopian.com/posts/anatomy-of-a-verkle-proof",
-        type: "article",
-      },
-      {
-        title: "Inner Product Argument",
-        author: "Dankrad Feist",
-        url: "https://dankradfeist.de/ethereum/2021/07/27/inner-product-arguments.html",
-        type: "paper",
-      },
-      {
-        title: "PCS Multiproof",
-        author: "Dankrad Feist",
-        url: "https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html",
-        type: "paper",
-      },
-    ],
-  },
-  {
-    label: "EIPs — included",
+    label: "EIPs",
     resources: [
       {
         title: "EIP-2935: Save historical block hashes in the state",
@@ -131,11 +173,6 @@ export const resourceCategories: ResourceCategory[] = [
         url: "https://eips.ethereum.org/EIPS/eip-6780",
         type: "eip",
       },
-    ],
-  },
-  {
-    label: "EIPs — championed",
-    resources: [
       {
         title: "EIP-4762: Gas costs changes for Verkle Trees",
         url: "https://eips.ethereum.org/EIPS/eip-4762",
@@ -179,7 +216,7 @@ export const resourceCategories: ResourceCategory[] = [
     ],
   },
   {
-    label: "metrics & measurements",
+    label: "Tools & Metrics",
     resources: [
       {
         title: "Verkle Metrics",

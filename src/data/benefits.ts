@@ -7,29 +7,29 @@ export interface Benefit {
 
 export const benefits: Benefit[] = [
   {
-    title: "scalability",
+    title: "Scalability",
     description:
       "Removing the need for validators to store state enables higher throughput.",
     items: [
-      "Higher TPS by eliminating the IO bottleneck",
+      "Higher TPS and gas limit by eliminating the IO bottleneck",
       "No synchronization required — blocks are self-contained",
       "Reduced disk footprint for validators and nodes",
     ],
     accentColor: "ef-cyan",
   },
   {
-    title: "decentralization",
+    title: "Decentralization",
     description:
       "Lower hardware requirements let more participants run nodes.",
     items: [
       "Lower entry barriers for new validators",
       "Users can create private staking pools",
-      "Reduced trust in centralized data providers",
+      "Reduced reliance on centralized data providers",
     ],
     accentColor: "ef-green",
   },
   {
-    title: "innovative features",
+    title: "Innovative Features",
     description:
       "Statelessness unlocks protocol improvements previously out of reach.",
     items: [
@@ -40,9 +40,9 @@ export const benefits: Benefit[] = [
     accentColor: "ef-purple",
   },
   {
-    title: "ease of use",
+    title: "Ease of Use",
     description:
-      "Smaller proofs improve cross-chain communication and interoperability.",
+      "Improves cross-chain communication and interoperability.",
     items: [
       "Seamless L1-L2 communication",
       "Faster node onboarding",

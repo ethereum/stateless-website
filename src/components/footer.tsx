@@ -2,15 +2,15 @@ import { ExternalLink } from "lucide-react";
 
 const footerLinks = [
   {
-    label: "book",
+    label: "Book",
     href: "https://stateless.fyi/",
   },
   {
-    label: "twitter",
+    label: "Twitter",
     href: "https://x.com/StatelessEth",
   },
   {
-    label: "contact",
+    label: "Contact",
     href: "mailto:stateless@ethereum.org",
   },
 ];

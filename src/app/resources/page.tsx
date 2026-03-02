@@ -13,7 +13,7 @@ export default function ResourcesPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 lg:px-8 py-16 lg:py-24">
       <PageHeader
-        title="resources"
+        title="Resources"
         description="Articles, talks, papers, and EIPs related to Stateless Ethereum. For in-depth technical content, see the book."
       />
 

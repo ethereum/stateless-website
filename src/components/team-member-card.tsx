@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import type { TeamMember } from "@/data/team";
+import { basePath } from "@/lib/base-path";
 
 function getInitials(name: string): string {
   return name
@@ -17,7 +18,7 @@ export function TeamMemberCard({ name, role, image, links }: TeamMember) {
         {image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={image}
+            src={`${basePath}${image}`}
             alt={name}
             className="size-16 rounded-full object-cover"
           />

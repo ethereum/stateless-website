@@ -12,7 +12,7 @@ export default function TeamPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 lg:px-8 py-16 lg:py-24">
       <PageHeader
-        title="team"
+        title="Team"
         description="The people building Stateless Ethereum."
       />
 

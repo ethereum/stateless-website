@@ -5,12 +5,12 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: "about", href: "/about" },
-  { label: "projects", href: "/projects" },
-  { label: "resources", href: "/resources" },
-  { label: "team", href: "/team" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Resources", href: "/resources" },
+  { label: "Team", href: "/team" },
   {
-    label: "book",
+    label: "Book",
     href: "https://stateless.fyi/",
     external: true,
   },

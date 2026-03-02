@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 lg:px-8 py-16 lg:py-24">
       <PageHeader
-        title="about stateless ethereum"
+        title="About Stateless Ethereum"
         description="An update to the Ethereum protocol that makes blocks self-contained units of execution."
       />
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
 function WhatIsSection() {
   return (
     <section className="mb-16">
-      <h2 className="text-xl/8 font-bold mb-6">what is stateless ethereum?</h2>
+      <h2 className="text-xl/8 font-bold mb-6">What Is Stateless Ethereum?</h2>
       <div className="flex flex-col gap-4 text-base/7 text-text-muted">
         <p>
           Today, Ethereum validators must download and store the entire state of
@@ -57,25 +57,25 @@ function WhatIsSection() {
 function UseCasesSection() {
   return (
     <section className="mb-16">
-      <h2 className="text-xl/8 font-bold mb-6">what does this unlock?</h2>
+      <h2 className="text-xl/8 font-bold mb-6">What Does This Unlock?</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <UseCaseCard
-          title="increasing the gas limit"
+          title="Increasing the Gas Limit"
           description="By proving the state efficiently in SNARKs, block verification time decouples from the gas limit. This removes the IO bottleneck that currently constrains throughput."
           accentColor="bg-pastel-cyan"
         />
         <UseCaseCard
-          title="improved decentralization"
+          title="Improved Decentralization"
           description="Without requiring disk space to run a client, low-powered devices can join the network and contribute to its security — fulfilling The Verge's goal of simplifying block validation."
           accentColor="bg-pastel-green"
         />
         <UseCaseCard
-          title="state expiry"
+          title="State Expiry"
           description="Statelessness makes it practical to expire old state, limiting the active state size and reducing the burden on validators over time."
           accentColor="bg-pastel-purple"
         />
         <UseCaseCard
-          title="trustless light clients"
+          title="Trustless Light Clients"
           description="Light clients can follow the chain directly without relying on centralized data providers, since all proof data travels with the block."
           accentColor="bg-pastel-coral"
         />
@@ -104,7 +104,7 @@ function UseCaseCard({
 function CommunitySection() {
   return (
     <section className="mb-16">
-      <h2 className="text-xl/8 font-bold mb-6">community</h2>
+      <h2 className="text-xl/8 font-bold mb-6">Community</h2>
       <div className="flex flex-col gap-4 text-base/7 text-text-muted">
         <p>
           A diverse set of teams are working on stateless Ethereum, including
@@ -170,8 +170,7 @@ function CommunitySection() {
           >
             Ethereum Fellowship Program
           </a>{" "}
-          has included stateless projects across multiple cohorts, and grants
-          are available for contributors working on specific stateless topics.
+          has included stateless projects across multiple cohorts.
         </p>
         <p>
           Interested in contributing?{" "}
@@ -191,7 +190,7 @@ function BookCta() {
   return (
     <section className="bg-navy text-white rounded-sm p-8 lg:p-12 text-center">
       <h2 className="text-xl/8 font-bold mb-4 text-white">
-        dive deeper
+        Dive Deeper
       </h2>
       <p className="text-white/70 max-w-lg mx-auto mb-6">
         For technical details on tree structures, gas costs, state conversion,

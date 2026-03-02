@@ -47,5 +47,4 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  text-transform: lowercase;
 }

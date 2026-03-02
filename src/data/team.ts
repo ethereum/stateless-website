@@ -12,6 +12,7 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     name: "Guillaume Ballet",
+    image: "/team/gballet.jpg",
     links: {
       twitter: "https://x.com/gballet",
       github: "https://github.com/gballet",
@@ -19,6 +20,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Carlos Pérez",
+    image: "/team/cperezz.jpg",
     links: {
       twitter: "https://x.com/CPerezz19",
       github: "https://github.com/CPerezz",
@@ -26,6 +28,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Wei Han Ng",
+    image: "/team/weiihann.jpeg",
     links: {
       twitter: "https://x.com/ngweihan_eth",
       github: "https://github.com/weiihann",

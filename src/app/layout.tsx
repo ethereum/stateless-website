@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     template: "%s — Stateless Consensus",
   },
   description:
-    "Making Ethereum's state scalable, verifiable, durable. The Stateless Consensus team works on scalability, decentralization, and innovative features for Ethereum.",
+    "Making Ethereum's state scalable, verifiable and durable. The Stateless Consensus team works on scalability, decentralization, and innovative features for Ethereum.",
   authors: [{ name: "Ethereum Foundation" }],
   openGraph: {
     title: "Stateless Consensus — Ethereum Foundation",
     description:
-      "Making Ethereum's state scalable, verifiable, durable. The Stateless Consensus team works on scalability, decentralization, and innovative features for Ethereum.",
+      "Making Ethereum's state scalable, verifiable and durable. The Stateless Consensus team works on scalability, decentralization, and innovative features for Ethereum.",
     type: "website",
   },
 };

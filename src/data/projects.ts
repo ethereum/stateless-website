@@ -1,6 +1,7 @@
 export interface Project {
   title: string;
   summary: string;
+  url?: string;
   eipUrl?: string;
   category: ProjectCategory;
 }
@@ -12,10 +13,10 @@ export type ProjectCategory =
   | "storage-optimization";
 
 export const categoryLabels: Record<ProjectCategory, string> = {
-  "protocol-changes": "protocol changes",
-  "state-management": "state management",
-  "performance-tooling": "performance & tooling",
-  "storage-optimization": "storage optimization",
+  "protocol-changes": "Protocol Changes",
+  "state-management": "State Management",
+  "performance-tooling": "Performance & Tooling",
+  "storage-optimization": "Storage Optimization",
 };
 
 export const categoryColors: Record<ProjectCategory, string> = {
@@ -30,6 +31,7 @@ export const projects: Project[] = [
     title: "Binary Tree Implementation",
     summary:
       "Migration of Ethereum's state tree from the Merkle Patricia Trie to a binary hash tree. The binary tree produces significantly smaller state proofs, compatible with STARK compression. Implementation is underway in Geth and Besu.",
+    eipUrl: "https://eips.ethereum.org/EIPS/eip-7864",
     category: "protocol-changes",
   },
   {
@@ -57,6 +59,7 @@ export const projects: Project[] = [
     title: "Compression-based State Expiry",
     summary:
       "An approach to state expiry through compression: old data is moved out of the active database into flat files, replaced by pointers. Corresponding trie nodes are removed to improve I/O.",
+    url: "https://ethresear.ch/t/compression-based-state-expiry/23443",
     category: "state-management",
   },
   {
@@ -69,12 +72,20 @@ export const projects: Project[] = [
     title: "Temporary Contract Storage",
     summary:
       "Semi-persistent storage managed by a system contract that clears automatically on a fixed cadence. Aims to move ephemeral data out of permanent storage to slow state growth.",
+    eipUrl: "https://eips.ethereum.org/EIPS/eip-8125",
+    category: "state-management",
+  },
+  {
+    title: "Activeness-Based State Access Repricing",
+    summary:
+      "Temporal locality pricing for state access: staler state costs more gas, frequently accessed state costs less. Creates economic incentives for state hygiene without mandating deletion.",
     category: "state-management",
   },
   {
     title: "BloatNet",
     summary:
       "A dedicated test network for stress-testing Ethereum's performance under state growth. Identified critical thresholds for memory consumption and validator performance degradation.",
+    url: "https://bloatnet.info/",
     category: "performance-tooling",
   },
   {

@@ -46,7 +46,7 @@ function HeroSection() {
           className="mx-auto mb-8"
         />
         <p className="text-xl/8 text-text-muted max-w-xl mx-auto mb-10">
-          Making Ethereum&apos;s state scalable, verifiable, durable.
+          Making Ethereum&apos;s state scalable, verifiable and durable.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
@@ -76,7 +76,7 @@ function BenefitsSection() {
     <section className="py-16 lg:py-24 px-4 bg-bg-alt">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-2xl/9 font-bold text-center mb-4">
-          why statelessness matters
+          Why Statelessness Matters
         </h2>
         <p className="text-text-muted text-center max-w-2xl mx-auto mb-12">
           Stateless Ethereum brings scalability, decentralization, and new
@@ -97,7 +97,7 @@ function ResourcesPreview() {
     <section className="py-16 lg:py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl/9 font-bold">latest resources</h2>
+          <h2 className="text-2xl/9 font-bold">Latest Resources</h2>
           <Link
             href="/resources"
             className="font-heading text-sm/6 text-ef-cyan hover:text-ef-cyan/80 inline-flex items-center gap-1 transition-colors"
@@ -137,12 +137,11 @@ function CommunitySection() {
     <section className="py-16 lg:py-24 px-4 bg-pastel-blue/30">
       <div className="mx-auto max-w-6xl text-center">
         <h2 className="text-2xl/9 font-bold mb-4">
-          get involved
+          Get Involved
         </h2>
         <p className="text-text-muted max-w-xl mx-auto mb-8">
           Stateless Ethereum is built by a diverse community of researchers,
-          developers, and contributors. Interested in contributing or applying
-          for a grant?
+          developers, and contributors. Interested in contributing?
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
