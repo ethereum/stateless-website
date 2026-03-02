@@ -3,6 +3,7 @@
 @theme {
   /* EF Brand Colors */
   --color-navy: #36364C;
+  --color-navy-dark: #2A2A3C;
   --color-ef-yellow: #F9EC7B;
   --color-ef-green: #54BC7A;
   --color-ef-cyan: #0DAFD2;
@@ -47,4 +48,78 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+}
+
+/* Scroll-triggered fade-in */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* SVG path draw animation */
+  @keyframes draw {
+    from {
+      stroke-dashoffset: var(--path-length);
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .draw-path {
+    animation: draw 1.5s ease forwards;
+  }
+
+  /* Hero network node drift */
+  @keyframes drift-1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(1.2px, -0.8px); }
+  }
+  @keyframes drift-2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-1px, 1.4px); }
+  }
+  @keyframes drift-3 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(0.8px, 1px); }
+  }
+
+  .drift-1 { animation: drift-1 18s ease-in-out infinite; }
+  .drift-2 { animation: drift-2 23s ease-in-out infinite; }
+  .drift-3 { animation: drift-3 28s ease-in-out infinite; }
+}
+
+/* Details/summary open-close animation */
+details .details-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+details[open] .details-content {
+  grid-template-rows: 1fr;
+}
+
+details .details-content > div {
+  overflow: hidden;
+}
+
+/* EF prism gradient bar */
+.prism-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-ef-coral),
+    var(--color-ef-yellow),
+    var(--color-ef-green),
+    var(--color-ef-cyan),
+    var(--color-ef-blue),
+    var(--color-ef-purple)
+  );
 }

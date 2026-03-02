@@ -9,12 +9,14 @@ export interface Resource {
 
 export interface ResourceCategory {
   label: string;
+  slug: string;
   resources: Resource[];
 }
 
 export const resourceCategories: ResourceCategory[] = [
   {
     label: "Statelessness",
+    slug: "statelessness",
     resources: [
       {
         title: "Why stateless?",
@@ -69,6 +71,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     label: "State Management",
+    slug: "state-management",
     resources: [
       {
         title: "State Expiry: In-protocol vs. Out-of-protocol",
@@ -100,10 +103,16 @@ export const resourceCategories: ResourceCategory[] = [
         url: "https://ethresear.ch/t/a-pragmatic-path-towards-validity-only-partial-statelessness-vops/22236",
         type: "article",
       },
+      {
+        title: "Hyper-Scaling State by Creating New Forms of State",
+        url: "https://ethresear.ch/t/hyper-scaling-state-by-creating-new-forms-of-state/24052",
+        type: "article",
+      },
     ],
   },
   {
     label: "Talks & Presentations",
+    slug: "talks",
     resources: [
       {
         title: "Anatomy of a stateless client",
@@ -157,6 +166,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     label: "EIPs",
+    slug: "eips",
     resources: [
       {
         title: "EIP-2935: Save historical block hashes in the state",
@@ -212,6 +222,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     label: "Tools & Metrics",
+    slug: "tools",
     resources: [
       {
         title: "Verkle Metrics",

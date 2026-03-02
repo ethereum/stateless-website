@@ -11,29 +11,38 @@ function getInitials(name: string): string {
     .slice(0, 2);
 }
 
-export function TeamMemberCard({ name, role, image, links }: TeamMember) {
+export function TeamMemberCard({
+  name,
+  role,
+  bio,
+  image,
+  links,
+}: TeamMember) {
   return (
-    <div className="bg-bg-alt border border-border rounded-sm p-6 text-center">
-      <div className="mx-auto mb-4 size-16 rounded-full bg-pastel-blue flex items-center justify-center">
+    <div className="bg-bg-alt border border-border rounded-sm p-8 text-center transition-all hover:shadow-xs">
+      <div className="mx-auto mb-4 size-24 lg:size-32 rounded-full bg-pastel-blue flex items-center justify-center">
         {image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={`${basePath}${image}`}
             alt={name}
-            className="size-16 rounded-full object-cover"
+            className="size-24 lg:size-32 rounded-full object-cover"
           />
         ) : (
-          <span className="font-heading text-lg/7 font-bold text-ef-blue">
+          <span className="font-heading text-2xl/9 lg:text-3xl/10 font-bold text-ef-blue">
             {getInitials(name)}
           </span>
         )}
       </div>
 
-      <h3 className="text-base/7 font-bold mb-1">{name}</h3>
-      {role && <p className="text-sm/6 text-text-muted mb-4">{role}</p>}
+      <h3 className="text-lg/7 font-bold mb-1">{name}</h3>
+      {role && <p className="text-sm/6 text-text-muted mb-2">{role}</p>}
+      {bio && (
+        <p className="text-sm/6 text-text-muted mb-4">{bio}</p>
+      )}
 
       {links && (
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center gap-4">
           {links.twitter && (
             <SocialLink href={links.twitter} label="Twitter" />
           )}
@@ -55,7 +64,7 @@ function SocialLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 text-xs/5 font-heading text-text-muted hover:text-ef-cyan transition-colors"
+      className="inline-flex items-center gap-1 text-xs/5 font-heading text-text-muted hover:text-ef-cyan transition-colors p-1"
     >
       {label.toLowerCase()}
       <ExternalLink className="size-3" />

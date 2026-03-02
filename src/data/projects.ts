@@ -26,6 +26,17 @@ export const categoryColors: Record<ProjectCategory, string> = {
   "storage-optimization": "ef-coral",
 };
 
+export const categoryDescriptions: Record<ProjectCategory, string> = {
+  "protocol-changes":
+    "Core EIPs that change how Ethereum handles state at the protocol level — from tree migration to gas repricing.",
+  "state-management":
+    "Research and proposals for expiring, compressing, and repricing state to keep the active dataset manageable.",
+  "performance-tooling":
+    "Benchmarking infrastructure and metrics that measure the real-world impact of state growth on client performance.",
+  "storage-optimization":
+    "Techniques for more efficient on-chain storage layouts that reduce witness sizes and improve locality.",
+};
+
 export const projects: Project[] = [
   {
     title: "Binary Tree Implementation",

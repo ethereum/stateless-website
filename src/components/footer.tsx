@@ -17,7 +17,8 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-bg-alt">
+    <footer className="bg-navy">
+      <div className="prism-gradient h-[2px]" />
       <div className="mx-auto max-w-6xl px-4 lg:px-8 py-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-6">
@@ -27,7 +28,7 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-heading text-sm/6 text-text-muted hover:text-text transition-colors inline-flex items-center gap-1"
+                className="font-heading text-sm/6 text-white/60 hover:text-white transition-colors inline-flex items-center gap-1"
               >
                 {link.label}
                 <ExternalLink className="size-3" />
@@ -35,7 +36,7 @@ export function Footer() {
             ))}
           </div>
 
-          <p className="text-sm/6 text-text-muted">
+          <p className="text-sm/6 text-white/40">
             &copy; {new Date().getFullYear()} Ethereum Foundation
           </p>
         </div>

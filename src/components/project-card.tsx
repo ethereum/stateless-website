@@ -1,11 +1,23 @@
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ title, summary, url, eipUrl }: Project) {
+interface ProjectCardProps extends Project {
+  borderColorClass?: string;
+}
+
+export function ProjectCard({
+  title,
+  summary,
+  url,
+  eipUrl,
+  borderColorClass = "border-l-ef-cyan",
+}: ProjectCardProps) {
   return (
-    <div className="bg-bg-alt border border-border rounded-sm p-6">
+    <div
+      className={`bg-bg-alt border border-border border-l-4 ${borderColorClass} rounded-sm p-6 transition-all hover:-translate-y-0.5 hover:shadow-xs`}
+    >
       <div className="flex items-start justify-between gap-4 mb-3">
-        <h3 className="text-base/7 font-bold">{title}</h3>
+        <h3 className="text-lg/7 font-bold">{title}</h3>
         <div className="flex shrink-0 gap-2">
           {eipUrl && (
             <a
@@ -31,7 +43,7 @@ export function ProjectCard({ title, summary, url, eipUrl }: Project) {
           )}
         </div>
       </div>
-      <p className="text-sm/6 text-text-muted">{summary}</p>
+      <p className="text-base/7 text-text-muted">{summary}</p>
     </div>
   );
 }
