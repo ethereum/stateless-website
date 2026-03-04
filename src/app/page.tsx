@@ -7,7 +7,7 @@ import { PullQuote } from "@/components/pull-quote";
 import { ScrollObserver } from "@/components/scroll-observer";
 import { StateGrowthChart } from "@/components/diagram/state-growth-chart";
 import { StatefulVsStateless } from "@/components/diagram/stateful-vs-stateless";
-import { ParticleHero } from "@/components/particle-hero";
+
 
 const featuredResources = [
   {
@@ -42,41 +42,45 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative bg-navy py-24 lg:py-36 px-4 overflow-hidden">
-      <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-radial-[at_30%_20%] from-ef-cyan/15 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-radial-[at_70%_80%] from-ef-purple/12 via-transparent to-transparent" />
-      </div>
-      <ParticleHero />
-      <div className="mx-auto max-w-6xl text-center relative z-10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`${basePath}/logo/white.svg`}
-          alt="Stateless Consensus"
-          width={320}
-          height={46}
-          className="mx-auto mb-8"
-        />
-        <p className="font-heading text-2xl/9 lg:text-4xl/12 text-white mb-12 gradient-text">
-          Making Ethereum&apos;s state scalable, verifiable and durable.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 bg-ef-cyan text-navy font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-ef-cyan/90 hover:shadow-[0_0_20px_rgba(13,175,210,0.4)] transition-all duration-300"
-          >
-            view projects
-            <ArrowRight className="size-4" />
-          </Link>
-          <a
-            href="https://stateless.fyi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
-          >
-            read the book
-            <ExternalLink className="size-4" />
-          </a>
+    <section className="relative h-[60vh] bg-navy overflow-hidden">
+      {/* Full-bleed hero illustration */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${basePath}/hero-image.png`}
+        alt=""
+        className="absolute inset-0 size-full object-cover object-center"
+      />
+      {/* Navy gradient overlay for text readability */}
+      <div
+        className="absolute inset-0 bg-linear-to-t from-navy/95 via-navy/50 to-transparent"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 flex h-full items-end px-8 lg:px-16 pb-12 lg:pb-16">
+        <div className="max-w-4xl">
+          <p className="font-heading text-4xl/11 lg:text-6xl/16 text-white mb-12 hero-enter">
+            Shaping the future of
+            <br />
+            Ethereum&apos;s state
+          </p>
+          <div className="flex flex-wrap items-center gap-4 hero-enter hero-enter-delay-2">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-white text-navy font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/90 transition-all duration-300"
+            >
+              view projects
+              <ArrowRight className="size-4" />
+            </Link>
+            <a
+              href="https://stateless.fyi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+            >
+              read the book
+              <ExternalLink className="size-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

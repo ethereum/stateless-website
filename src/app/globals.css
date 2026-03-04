@@ -127,6 +127,37 @@ h6 {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
   }
+
+  /* Hero text entrance: slide from left + fade in */
+  @keyframes hero-enter {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .hero-enter {
+    opacity: 0;
+    animation: hero-enter 500ms ease-out forwards;
+  }
+
+  .hero-enter-delay-1 {
+    animation-delay: 150ms;
+  }
+
+  .hero-enter-delay-2 {
+    animation-delay: 300ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    opacity: 1;
+  }
 }
 
 /* Details/summary open-close animation */
