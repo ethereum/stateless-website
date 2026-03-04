@@ -26,6 +26,12 @@
   --color-bg-alt: #FFFFFF;
   --color-border: #E8E6E3;
 
+  /* Gradient mesh colors (semi-transparent for layering) */
+  --color-mesh-cyan: oklch(0.75 0.12 200 / 0.4);
+  --color-mesh-purple: oklch(0.60 0.15 310 / 0.35);
+  --color-mesh-green: oklch(0.72 0.14 155 / 0.35);
+  --color-mesh-coral: oklch(0.75 0.12 25 / 0.3);
+
   /* Fonts */
   --font-heading: "Space Mono", monospace;
   --font-body: "Libre Franklin", sans-serif;
@@ -54,13 +60,20 @@ h6 {
 @media (prefers-reduced-motion: no-preference) {
   .animate-on-scroll {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(24px) scale(0.97);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
   }
 
   .animate-on-scroll.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+  }
+
+  /* Stagger children: set --stagger-index via JS or inline style */
+  .animate-on-scroll[style*="--stagger-index"] {
+    transition-delay: calc(var(--stagger-index, 0) * 80ms);
   }
 
   /* SVG path draw animation */
@@ -94,6 +107,26 @@ h6 {
   .drift-1 { animation: drift-1 18s ease-in-out infinite; }
   .drift-2 { animation: drift-2 23s ease-in-out infinite; }
   .drift-3 { animation: drift-3 28s ease-in-out infinite; }
+
+  /* Ambient gradient mesh rotation */
+  @keyframes mesh-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.05); }
+    66% { transform: translate(-20px, 15px) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  /* Glow pulse for interactive elements */
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* Gradient shimmer sweep for card hover */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
 }
 
 /* Details/summary open-close animation */
@@ -122,4 +155,84 @@ details .details-content > div {
     var(--color-ef-blue),
     var(--color-ef-purple)
   );
+}
+
+/* Glassmorphic card base */
+.glass-card {
+  background: oklch(1 0 0 / 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid oklch(1 0 0 / 0.25);
+  border-radius: var(--radius-xl);
+}
+
+.glass-card:hover {
+  border-color: oklch(1 0 0 / 0.4);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-ef-cyan),
+    var(--color-ef-purple),
+    var(--color-ef-cyan)
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gradient-text {
+    animation: shimmer 6s ease-in-out infinite;
+  }
+}
+
+/* Gradient mesh blob */
+.mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mesh-blob {
+    animation: mesh-drift 20s ease-in-out infinite;
+  }
+
+  .mesh-blob:nth-child(2) {
+    animation-duration: 25s;
+    animation-direction: reverse;
+  }
+
+  .mesh-blob:nth-child(3) {
+    animation-duration: 30s;
+    animation-delay: -10s;
+  }
+}
+
+/* Wave divider positioning */
+.wave-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider-top {
+  top: -1px;
+}
+
+.wave-divider-bottom {
+  bottom: -1px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
