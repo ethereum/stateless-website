@@ -1,1 +1,1 @@
-export const basePath = "/stateless-website";
+export const basePath = "";
