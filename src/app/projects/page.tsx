@@ -41,7 +41,7 @@ const categoryBorderMap: Record<string, string> = {
   "ef-coral": "border-l-ef-coral",
 };
 
-const sectionBg = ["bg-transparent", "bg-pastel-purple/20", "bg-transparent", "bg-pastel-coral/20"];
+const sectionBg = ["bg-transparent", "bg-pastel-purple/20", "bg-transparent", "bg-pastel-purple/20"];
 
 export default function ProjectsPage() {
   return (
@@ -68,8 +68,8 @@ export default function ProjectsPage() {
             key={category}
             className={`${bg} py-12 lg:py-16 px-4 relative overflow-hidden`}
           >
-            {idx === 1 && <GradientMesh preset="purple-blue" className="opacity-30" />}
-            {idx === 3 && <GradientMesh preset="coral-purple" className="opacity-30" />}
+            {idx === 1 && <GradientMesh preset="purple-cyan" className="opacity-30" />}
+            {idx === 3 && <GradientMesh preset="purple-cyan" className="opacity-30" />}
             <div className="relative mx-auto max-w-6xl">
               <ChapterHeading
                 label={label}

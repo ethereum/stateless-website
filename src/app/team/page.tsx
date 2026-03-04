@@ -59,8 +59,8 @@ export default function TeamPage() {
       </div>
 
       {/* Collaborators section */}
-      <section className="bg-pastel-blue/25 py-16 lg:py-24 px-4 relative overflow-hidden">
-        <GradientMesh preset="purple-blue" className="opacity-20" />
+      <section className="bg-pastel-purple/25 py-16 lg:py-24 px-4 relative overflow-hidden">
+        <GradientMesh preset="purple-cyan" className="opacity-20" />
         <div className="relative mx-auto max-w-6xl">
           <h2 className="text-2xl/9 font-bold mb-8">Collaborators</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

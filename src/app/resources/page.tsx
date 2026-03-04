@@ -47,7 +47,7 @@ const sectionBg = [
   "bg-transparent",
   "bg-pastel-purple/20",
   "bg-transparent",
-  "bg-pastel-green/20",
+  "bg-pastel-yellow/20",
   "bg-transparent",
 ];
 
