@@ -12,10 +12,10 @@ export function PageHeader({
   if (editorial) {
     return (
       <div className="mb-16">
-        <h1 className="text-4xl/12 lg:text-5xl/14 font-bold tracking-tight">
+        <h1 className="text-4xl/12 lg:text-6xl/16 font-bold tracking-tight">
           {title}
         </h1>
-        <div className="mt-4 h-[3px] w-12 bg-ef-cyan" />
+        <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-ef-cyan to-ef-purple" />
         {description && (
           <p className="mt-6 text-lg/8 lg:text-xl/8 text-text-muted max-w-3xl">
             {description}

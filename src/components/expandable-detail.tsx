@@ -13,7 +13,7 @@ export function ExpandableDetail({
   children,
 }: ExpandableDetailProps) {
   return (
-    <details className="group border border-border rounded-sm">
+    <details className="group glass-card">
       <summary className="flex items-center gap-3 cursor-pointer px-5 py-4 select-none font-heading text-sm/6 font-bold">
         <ChevronRight className="size-4 shrink-0 text-text-muted transition-transform group-open:rotate-90" />
         <span>{heading}</span>

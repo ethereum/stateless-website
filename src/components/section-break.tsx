@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { GradientMesh, type MeshPreset } from "@/components/gradient-mesh";
+import { WaveDivider } from "@/components/wave-divider";
 
 type Palette =
   | "cyan"
@@ -9,14 +11,52 @@ type Palette =
   | "blue"
   | "navy";
 
-const paletteStyles: Record<Palette, string> = {
-  cyan: "bg-pastel-cyan/30",
-  green: "bg-pastel-green/30",
-  purple: "bg-pastel-purple/30",
-  coral: "bg-pastel-coral/30",
-  yellow: "bg-pastel-yellow/30",
-  blue: "bg-pastel-blue/30",
-  navy: "bg-navy text-white",
+const paletteConfig: Record<
+  Palette,
+  { bg: string; mesh: MeshPreset; waveFill: string; textClass: string }
+> = {
+  cyan: {
+    bg: "bg-pastel-cyan/40",
+    mesh: "cyan-purple",
+    waveFill: "var(--color-bg)",
+    textClass: "",
+  },
+  green: {
+    bg: "bg-pastel-green/40",
+    mesh: "green-cyan",
+    waveFill: "var(--color-bg)",
+    textClass: "",
+  },
+  purple: {
+    bg: "bg-pastel-purple/40",
+    mesh: "purple-blue",
+    waveFill: "var(--color-bg)",
+    textClass: "",
+  },
+  coral: {
+    bg: "bg-pastel-coral/40",
+    mesh: "coral-purple",
+    waveFill: "var(--color-bg)",
+    textClass: "",
+  },
+  yellow: {
+    bg: "bg-pastel-yellow/40",
+    mesh: "cyan-purple",
+    waveFill: "var(--color-bg)",
+    textClass: "",
+  },
+  blue: {
+    bg: "bg-pastel-blue/40",
+    mesh: "purple-blue",
+    waveFill: "var(--color-bg)",
+    textClass: "",
+  },
+  navy: {
+    bg: "bg-navy",
+    mesh: "navy-glow",
+    waveFill: "var(--color-bg)",
+    textClass: "text-white",
+  },
 };
 
 interface SectionBreakProps {
@@ -25,13 +65,18 @@ interface SectionBreakProps {
 }
 
 export function SectionBreak({ palette, children }: SectionBreakProps) {
+  const config = paletteConfig[palette];
+
   return (
     <section
-      className={`relative left-1/2 -translate-x-1/2 w-screen ${paletteStyles[palette]}`}
+      className={`relative left-1/2 -translate-x-1/2 w-screen ${config.bg} ${config.textClass} overflow-hidden`}
     >
-      <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
+      <GradientMesh preset={config.mesh} />
+      <WaveDivider position="top" color={config.waveFill} />
+      <div className="relative mx-auto max-w-6xl px-4 py-20 lg:py-28">
         {children}
       </div>
+      <WaveDivider position="bottom" color={config.waveFill} />
     </section>
   );
 }

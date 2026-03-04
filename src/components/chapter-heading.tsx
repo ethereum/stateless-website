@@ -15,16 +15,21 @@ interface ChapterHeadingProps {
 
 export function ChapterHeading({ label, title, color }: ChapterHeadingProps) {
   const bgColor = textToBg[color] ?? "bg-ef-cyan";
+  const isNumberLabel = /^\d+$/.test(label);
 
   return (
-    <div className="mb-8">
+    <div className="mb-10">
       <p
-        className={`font-heading text-sm/6 font-bold uppercase tracking-wider mb-3 ${color}`}
+        className={`font-heading text-sm/6 font-bold uppercase tracking-wider mb-3 ${
+          isNumberLabel ? "gradient-text" : color
+        }`}
       >
         {label}
       </p>
-      <h2 className="text-3xl/10 lg:text-4xl/12 font-bold">{title}</h2>
-      <div className={`mt-4 h-[3px] w-12 ${bgColor}`} />
+      <h2 className="text-3xl/10 lg:text-5xl/14 font-bold tracking-tight">
+        {title}
+      </h2>
+      <div className={`mt-4 h-1 w-16 rounded-full ${bgColor}`} />
     </div>
   );
 }
