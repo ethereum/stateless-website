@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { PageHeader } from "@/components/page-header";
+import { PageHero } from "@/components/page-hero";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { teamMembers } from "@/data/team";
 import { GradientMesh } from "@/components/gradient-mesh";
@@ -45,8 +45,8 @@ export default function TeamPage() {
   return (
     <div>
       <div className="mx-auto max-w-6xl px-4 lg:px-8 py-16 lg:py-24">
-        <PageHeader
-          editorial
+        <PageHero
+          image="/team.png"
           title="Team"
           description="The Stateless Consensus team at the Ethereum Foundation works on making Ethereum's state scalable, verifiable, and durable. We collaborate closely with client teams and the broader research community."
         />

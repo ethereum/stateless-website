@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
-import { PageHeader } from "@/components/page-header";
+import { PageHero } from "@/components/page-hero";
 import { ChapterHeading } from "@/components/chapter-heading";
 import { ResourceCard } from "@/components/resource-card";
 import { resourceCategories } from "@/data/resources";
@@ -54,9 +54,9 @@ const sectionBg = [
 export default function ResourcesPage() {
   return (
     <div>
-      <div className="mx-auto max-w-4xl px-4 lg:px-8 py-16 lg:py-24">
-        <PageHeader
-          editorial
+      <div className="mx-auto max-w-6xl px-4 lg:px-8 py-16 lg:py-24">
+        <PageHero
+          image="/resources.jpeg"
           title="Resources"
           description="Articles, talks, papers, and EIPs related to Stateless Ethereum. For in-depth technical content, see the book."
         />
@@ -91,8 +91,8 @@ export default function ResourcesPage() {
 
       {/* Anchor navigation */}
       <nav className="sticky top-16 z-40 bg-bg-alt/70 backdrop-blur-xl border-b border-white/20">
-        <div className="mx-auto max-w-4xl px-4 lg:px-8">
-          <div className="flex gap-6 overflow-x-auto py-3 no-scrollbar">
+        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+          <div className="flex justify-center gap-6 overflow-x-auto py-3 no-scrollbar">
             {resourceCategories.map((cat) => (
               <a
                 key={cat.slug}
@@ -117,7 +117,7 @@ export default function ResourcesPage() {
             id={category.slug}
             className={`${bg} py-12 lg:py-16 px-4 scroll-mt-28`}
           >
-            <div className="mx-auto max-w-4xl">
+            <div className="mx-auto max-w-6xl">
               <ChapterHeading
                 label={`0${idx + 1}`}
                 title={category.label}

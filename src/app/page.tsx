@@ -58,7 +58,7 @@ function HeroSection() {
 
       <div className="relative z-10 flex h-full items-end px-8 lg:px-16 pb-12 lg:pb-16">
         <div className="max-w-4xl">
-          <p className="font-heading text-4xl/11 lg:text-6xl/16 text-white mb-12 hero-enter">
+          <p className="text-5xl/14 lg:text-7xl/20 font-bold tracking-tight text-white mb-12 hero-enter">
             Shaping the future of
             <br />
             Ethereum&apos;s state

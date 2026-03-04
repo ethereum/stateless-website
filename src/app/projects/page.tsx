@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/page-header";
+import { PageHero } from "@/components/page-hero";
 import { ChapterHeading } from "@/components/chapter-heading";
 import { ProjectCard } from "@/components/project-card";
 import { ScrollObserver } from "@/components/scroll-observer";
@@ -46,9 +46,9 @@ const sectionBg = ["bg-transparent", "bg-pastel-purple/20", "bg-transparent", "b
 export default function ProjectsPage() {
   return (
     <div>
-      <div className="mx-auto max-w-6xl px-4 lg:px-8 py-16 lg:py-24">
-        <PageHeader
-          editorial
+      <div className="mx-auto max-w-6xl px-4 lg:px-8 pt-16 lg:pt-24">
+        <PageHero
+          image="/projects.jpeg"
           title="Active Projects"
           description="An overview of the projects currently being worked on by the Stateless Consensus team and the broader community."
         />
