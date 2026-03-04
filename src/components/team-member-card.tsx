@@ -19,8 +19,8 @@ export function TeamMemberCard({
   links,
 }: TeamMember) {
   return (
-    <div className="bg-bg-alt border border-border rounded-sm p-8 text-center transition-all hover:shadow-xs">
-      <div className="mx-auto mb-4 size-24 lg:size-32 rounded-full bg-pastel-blue flex items-center justify-center">
+    <div className="glass-card p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(102,123,188,0.15)]">
+      <div className="mx-auto mb-4 size-24 lg:size-32 rounded-full bg-pastel-blue flex items-center justify-center ring-2 ring-ef-blue/20 ring-offset-2 ring-offset-transparent">
         {image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -64,7 +64,7 @@ function SocialLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 text-xs/5 font-heading text-text-muted hover:text-ef-cyan transition-colors p-1"
+      className="inline-flex items-center gap-1 text-xs/5 font-heading text-text-muted hover:text-ef-cyan hover:drop-shadow-[0_0_6px_rgba(13,175,210,0.4)] transition-all p-1"
     >
       {label.toLowerCase()}
       <ExternalLink className="size-3" />

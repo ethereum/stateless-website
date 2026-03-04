@@ -48,10 +48,10 @@ export function ResourceCard({ title, author, url, type }: Resource) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-4 bg-bg-alt border border-border rounded-sm p-4 transition-all hover:border-ef-cyan/40 hover:border-l-ef-cyan hover:border-l-4 group"
+      className="flex items-center gap-4 glass-card p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(13,175,210,0.12)] hover:border-ef-cyan/30 group"
     >
       <span
-        className={`shrink-0 inline-flex items-center gap-1 text-xs/5 font-heading px-2.5 py-1 rounded-sm ${config.colorClass}`}
+        className={`shrink-0 inline-flex items-center gap-1 text-xs/5 font-heading px-2.5 py-1 rounded-full ${config.colorClass}`}
       >
         <Icon className="size-3" />
         {config.label}
