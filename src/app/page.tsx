@@ -7,7 +7,7 @@ import { PullQuote } from "@/components/pull-quote";
 import { ScrollObserver } from "@/components/scroll-observer";
 import { StateGrowthChart } from "@/components/diagram/state-growth-chart";
 import { StatefulVsStateless } from "@/components/diagram/stateful-vs-stateless";
-import { HeroNetwork } from "@/components/hero-network";
+import { ParticleHero } from "@/components/particle-hero";
 
 const featuredResources = [
   {
@@ -42,8 +42,12 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="bg-navy py-20 lg:py-32 px-4 relative overflow-hidden">
-      <HeroNetwork />
+    <section className="relative bg-navy py-24 lg:py-36 px-4 overflow-hidden">
+      <div className="absolute inset-0" aria-hidden="true">
+        <div className="absolute inset-0 bg-radial-[at_30%_20%] from-ef-cyan/15 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-radial-[at_70%_80%] from-ef-purple/12 via-transparent to-transparent" />
+      </div>
+      <ParticleHero />
       <div className="mx-auto max-w-6xl text-center relative z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -53,13 +57,13 @@ function HeroSection() {
           height={46}
           className="mx-auto mb-8"
         />
-        <p className="font-heading text-2xl/9 lg:text-3xl/10 text-white mb-10">
+        <p className="font-heading text-2xl/9 lg:text-4xl/12 text-white mb-12 gradient-text">
           Making Ethereum&apos;s state scalable, verifiable and durable.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 bg-ef-cyan text-navy font-heading text-sm/6 px-6 py-3 rounded-sm hover:bg-ef-cyan/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-ef-cyan text-navy font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-ef-cyan/90 hover:shadow-[0_0_20px_rgba(13,175,210,0.4)] transition-all duration-300"
           >
             view projects
             <ArrowRight className="size-4" />
@@ -68,7 +72,7 @@ function HeroSection() {
             href="https://stateless.fyi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-6 py-3 rounded-sm hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
           >
             read the book
             <ExternalLink className="size-4" />
@@ -130,7 +134,7 @@ function ApproachSection() {
           <StatefulVsStateless />
         </ScrollObserver>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border-l-4 border-l-ef-cyan bg-pastel-cyan/20 rounded-r-sm p-6">
+          <div className="border-l-4 border-l-ef-cyan glass-card p-6">
             <h3 className="text-lg/7 font-bold mb-3">Statelessness</h3>
             <p className="text-base/7 text-text-muted">
               Blocks carry compact cryptographic proofs so validators can verify
@@ -139,7 +143,7 @@ function ApproachSection() {
               barriers to participation.
             </p>
           </div>
-          <div className="border-l-4 border-l-ef-purple bg-pastel-purple/20 rounded-r-sm p-6">
+          <div className="border-l-4 border-l-ef-purple glass-card p-6">
             <h3 className="text-lg/7 font-bold mb-3">State Management</h3>
             <p className="text-base/7 text-text-muted">
               Expiring old state, compressing unused data, repricing access based
@@ -182,7 +186,7 @@ function WhyItMattersSection() {
         ].map((card) => (
           <div
             key={card.title}
-            className={`bg-white border-t-4 ${card.border} rounded-sm p-6`}
+            className={`glass-card border-t-4 ${card.border} p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(13,175,210,0.12)]`}
           >
             <h3 className="text-xl/8 font-bold mb-3">{card.title}</h3>
             <p className="text-base/7 text-text-muted">{card.body}</p>
@@ -214,7 +218,7 @@ function ResourcesPreview() {
               href={resource.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between gap-4 bg-bg-alt border border-border rounded-sm p-5 hover:border-ef-cyan/40 hover:-translate-y-0.5 transition-all group"
+              className="flex items-center justify-between gap-4 glass-card p-5 hover:border-ef-cyan/30 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(13,175,210,0.12)] transition-all duration-300 group"
             >
               <div>
                 <p className="font-medium text-base/7 group-hover:text-ef-cyan transition-colors">
@@ -248,14 +252,14 @@ function CommunityCta() {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href="mailto:stateless@ethereum.org"
-            className="inline-flex items-center gap-2 bg-ef-cyan text-navy font-heading text-sm/6 px-6 py-3 rounded-sm hover:bg-ef-cyan/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-ef-cyan text-navy font-heading text-sm/6 px-6 py-3 rounded-xl hover:bg-ef-cyan/90 hover:shadow-[0_0_20px_rgba(13,175,210,0.4)] transition-all duration-300"
           >
             reach out
             <ArrowRight className="size-4" />
           </a>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-6 py-3 rounded-sm hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-6 py-3 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
           >
             view active projects
             <ArrowRight className="size-4" />
