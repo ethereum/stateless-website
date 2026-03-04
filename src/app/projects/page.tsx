@@ -4,6 +4,7 @@ import { ChapterHeading } from "@/components/chapter-heading";
 import { ProjectCard } from "@/components/project-card";
 import { ScrollObserver } from "@/components/scroll-observer";
 import { TreeComparison } from "@/components/diagram/tree-comparison";
+import { GradientMesh } from "@/components/gradient-mesh";
 
 import {
   projects,
@@ -40,7 +41,7 @@ const categoryBorderMap: Record<string, string> = {
   "ef-coral": "border-l-ef-coral",
 };
 
-const sectionBg = ["bg-transparent", "bg-pastel-purple/10", "bg-transparent", "bg-pastel-coral/10"];
+const sectionBg = ["bg-transparent", "bg-pastel-purple/20", "bg-transparent", "bg-pastel-coral/20"];
 
 export default function ProjectsPage() {
   return (
@@ -65,9 +66,11 @@ export default function ProjectsPage() {
         return (
           <section
             key={category}
-            className={`${bg} py-12 lg:py-16 px-4`}
+            className={`${bg} py-12 lg:py-16 px-4 relative overflow-hidden`}
           >
-            <div className="mx-auto max-w-6xl">
+            {idx === 1 && <GradientMesh preset="purple-blue" className="opacity-30" />}
+            {idx === 3 && <GradientMesh preset="coral-purple" className="opacity-30" />}
+            <div className="relative mx-auto max-w-6xl">
               <ChapterHeading
                 label={label}
                 title={categoryLabels[category]}

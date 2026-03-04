@@ -3,6 +3,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { teamMembers } from "@/data/team";
+import { GradientMesh } from "@/components/gradient-mesh";
 
 export const metadata: Metadata = {
   title: "Team",
@@ -58,8 +59,9 @@ export default function TeamPage() {
       </div>
 
       {/* Collaborators section */}
-      <section className="bg-pastel-blue/20 py-16 lg:py-24 px-4">
-        <div className="mx-auto max-w-6xl">
+      <section className="bg-pastel-blue/25 py-16 lg:py-24 px-4 relative overflow-hidden">
+        <GradientMesh preset="purple-blue" className="opacity-20" />
+        <div className="relative mx-auto max-w-6xl">
           <h2 className="text-2xl/9 font-bold mb-8">Collaborators</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
@@ -76,7 +78,7 @@ export default function TeamPage() {
                     href={team.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-heading text-sm/6 text-ef-cyan hover:text-ef-cyan/80 border border-ef-cyan/30 rounded-sm px-3 py-1.5 transition-colors"
+                    className="inline-flex items-center gap-1 font-heading text-sm/6 text-ef-cyan hover:text-ef-cyan/80 border border-ef-cyan/30 rounded-full px-3 py-1.5 hover:bg-ef-cyan/10 transition-all"
                   >
                     {team.name}
                     <ExternalLink className="size-3" />
@@ -97,7 +99,7 @@ export default function TeamPage() {
                 {supportingTeams.map((team) => (
                   <span
                     key={team}
-                    className="font-heading text-sm/6 text-text-muted border border-border rounded-sm px-3 py-1.5"
+                    className="font-heading text-sm/6 text-text-muted border border-border rounded-full px-3 py-1.5"
                   >
                     {team}
                   </span>
@@ -127,7 +129,7 @@ export default function TeamPage() {
           </p>
           <a
             href="mailto:stateless@ethereum.org"
-            className="inline-flex items-center gap-2 bg-navy text-white font-heading text-sm/6 px-6 py-3 rounded-sm hover:bg-navy/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-navy text-white font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-navy/90 hover:shadow-[0_0_20px_rgba(54,54,76,0.4)] transition-all duration-300"
           >
             get in touch
             <ArrowRight className="size-4" />

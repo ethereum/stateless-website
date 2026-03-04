@@ -45,9 +45,9 @@ const categoryColors: Record<string, string> = {
 
 const sectionBg = [
   "bg-transparent",
-  "bg-pastel-purple/10",
+  "bg-pastel-purple/20",
   "bg-transparent",
-  "bg-pastel-green/10",
+  "bg-pastel-green/20",
   "bg-transparent",
 ];
 
@@ -71,7 +71,7 @@ export default function ResourcesPage() {
                 href={resource.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex flex-col bg-bg-alt border border-border border-t-4 ${resource.border} rounded-sm p-5 hover:-translate-y-0.5 hover:shadow-xs transition-all group`}
+                className={`flex flex-col glass-card border-t-4 ${resource.border} p-5 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(13,175,210,0.12)] transition-all duration-300 group`}
               >
                 <span className="inline-flex items-center gap-1 text-xs/5 font-heading text-text-muted mb-3">
                   Article
@@ -90,7 +90,7 @@ export default function ResourcesPage() {
       </div>
 
       {/* Anchor navigation */}
-      <nav className="sticky top-16 z-40 bg-bg-alt/80 backdrop-blur-sm border-b border-border">
+      <nav className="sticky top-16 z-40 bg-bg-alt/70 backdrop-blur-xl border-b border-white/20">
         <div className="mx-auto max-w-4xl px-4 lg:px-8">
           <div className="flex gap-6 overflow-x-auto py-3 no-scrollbar">
             {resourceCategories.map((cat) => (
