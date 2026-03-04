@@ -12,7 +12,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-bg-alt/80 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 bg-bg-alt/70 backdrop-blur-xl border-b border-white/20">
       <div className="mx-auto max-w-6xl px-4 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
@@ -51,7 +51,7 @@ export function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <nav className="md:hidden border-t border-border bg-bg-alt px-4 py-4">
+        <nav className="md:hidden border-t border-white/20 bg-bg-alt/80 backdrop-blur-xl px-4 py-4">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <NavItem
@@ -77,9 +77,9 @@ function NavItem({
   active: boolean;
   onClick?: () => void;
 }) {
-  const className = `font-heading text-sm/6 transition-colors ${
+  const className = `relative font-heading text-sm/6 transition-colors ${
     active
-      ? "text-ef-cyan"
+      ? "text-ef-cyan after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-ef-cyan after:rounded-full"
       : "text-text-muted hover:text-text"
   }`;
 
