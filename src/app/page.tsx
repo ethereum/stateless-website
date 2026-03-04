@@ -11,19 +11,19 @@ import { StatefulVsStateless } from "@/components/diagram/stateful-vs-stateless"
 
 const featuredResources = [
   {
+    title: "Hyper-Scaling State by Creating New Forms of State",
+    author: "Vitalik Buterin",
+    url: "https://ethresear.ch/t/hyper-scaling-state-by-creating-new-forms-of-state/24052",
+  },
+  {
     title: "The Future of Ethereum's State",
     author: "Stateless Consensus",
     url: "https://blog.ethereum.org/2025/12/16/future-of-state",
   },
   {
-    title: "Why stateless?",
-    author: "Dankrad Feist",
-    url: "https://dankradfeist.de/ethereum/2021/02/14/why-stateless.html",
-  },
-  {
-    title: "Possible futures of the Ethereum protocol, part 4: The Verge",
-    author: "Vitalik Buterin",
-    url: "https://vitalik.eth.limo/general/2024/10/23/futures4.html",
+    title: "Compression-based state expiry",
+    author: "Guillaume Ballet",
+    url: "https://ethresear.ch/t/compression-based-state-expiry/23443/1",
   },
 ];
 
@@ -206,7 +206,7 @@ function ResourcesPreview() {
     <section className="py-16 lg:py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl/9 font-bold">Featured Reading</h2>
+          <h2 className="text-2xl/9 font-bold">Recent Resources</h2>
           <Link
             href="/resources"
             className="font-heading text-sm/6 text-ef-cyan hover:text-ef-cyan/80 inline-flex items-center gap-1 transition-colors"

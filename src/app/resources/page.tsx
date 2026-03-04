@@ -13,23 +13,23 @@ export const metadata: Metadata = {
 
 const featuredResources = [
   {
-    title: "The Future of Ethereum's State",
-    author: "Stateless Consensus",
-    url: "https://blog.ethereum.org/2025/12/16/future-of-state",
+    title: "Hyper-Scaling State by Creating New Forms of State",
+    author: "Vitalik Buterin",
+    url: "https://ethresear.ch/t/hyper-scaling-state-by-creating-new-forms-of-state/24052",
     type: "article" as const,
     border: "border-t-ef-cyan",
   },
   {
-    title: "Why stateless?",
-    author: "Dankrad Feist",
-    url: "https://dankradfeist.de/ethereum/2021/02/14/why-stateless.html",
+    title: "The Future of Ethereum's State",
+    author: "Stateless Consensus",
+    url: "https://blog.ethereum.org/2025/12/16/future-of-state",
     type: "article" as const,
     border: "border-t-ef-green",
   },
   {
-    title: "Possible futures of the Ethereum protocol, part 4: The Verge",
-    author: "Vitalik Buterin",
-    url: "https://vitalik.eth.limo/general/2024/10/23/futures4.html",
+    title: "Compression-based state expiry",
+    author: "Guillaume Ballet",
+    url: "https://ethresear.ch/t/compression-based-state-expiry/23443/1",
     type: "article" as const,
     border: "border-t-ef-purple",
   },
@@ -61,9 +61,9 @@ export default function ResourcesPage() {
           description="Articles, talks, papers, and EIPs related to Stateless Ethereum. For in-depth technical content, see the book."
         />
 
-        {/* Featured Reading */}
+        {/* Recent Resources */}
         <section className="mb-16">
-          <h2 className="text-xl/8 font-bold mb-6">Featured Reading</h2>
+          <h2 className="text-xl/8 font-bold mb-6">Recent Resources</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {featuredResources.map((resource) => (
               <a
