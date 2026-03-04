@@ -25,6 +25,7 @@ function TreeNode({
       stroke={highlighted ? "var(--color-ef-cyan)" : stroke}
       strokeWidth={highlighted ? 2 : 1.5}
       opacity={highlighted ? 1 : 0.7}
+      filter={highlighted ? "url(#glow-highlight)" : undefined}
     />
   );
 }
@@ -68,6 +69,13 @@ export function TreeComparison() {
       role="img"
       aria-label="Comparison of Merkle Patricia Trie vs Binary Hash Tree proof sizes"
     >
+      <defs>
+        <filter id="glow-highlight" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+
       {/* Titles */}
       <text
         x={mptX}

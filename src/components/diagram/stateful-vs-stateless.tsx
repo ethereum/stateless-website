@@ -10,6 +10,7 @@ function RoundedRect({
   stroke,
   label,
   sublabel,
+  svgFilter,
 }: {
   x: number;
   y: number;
@@ -19,6 +20,7 @@ function RoundedRect({
   stroke: string;
   label: string;
   sublabel?: string;
+  svgFilter?: string;
 }) {
   return (
     <g>
@@ -31,6 +33,7 @@ function RoundedRect({
         fill={fill}
         stroke={stroke}
         strokeWidth="1.5"
+        filter={svgFilter}
       />
       <text
         x={x + w / 2}
@@ -114,6 +117,10 @@ export function StatefulVsStateless() {
             fill="var(--color-text-muted)"
           />
         </marker>
+        <filter id="glow-node" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
       </defs>
 
       {/* Column headers */}
@@ -160,6 +167,7 @@ export function StatefulVsStateless() {
         fill="var(--color-pastel-coral)"
         stroke="var(--color-ef-coral)"
         label="New Block"
+        svgFilter="url(#glow-node)"
       />
       <Arrow
         x1={leftX + colW / 2}
@@ -220,6 +228,7 @@ export function StatefulVsStateless() {
         fill="var(--color-pastel-cyan)"
         stroke="var(--color-ef-cyan)"
         label="New Block"
+        svgFilter="url(#glow-node)"
       />
       <Arrow
         x1={rightX + colW / 2}

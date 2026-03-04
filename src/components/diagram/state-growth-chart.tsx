@@ -41,6 +41,10 @@ export function StateGrowthChart() {
           <stop offset="0%" stopColor="var(--color-ef-cyan)" stopOpacity="0.4" />
           <stop offset="100%" stopColor="var(--color-pastel-cyan)" stopOpacity="0.1" />
         </linearGradient>
+        <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
       </defs>
 
       {/* Grid lines */}
@@ -83,6 +87,7 @@ export function StateGrowthChart() {
           fill="var(--color-ef-cyan)"
           stroke="white"
           strokeWidth="2"
+          filter="url(#glow-cyan)"
         />
       ))}
 
