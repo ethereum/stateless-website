@@ -62,16 +62,17 @@ const paletteConfig: Record<
 interface SectionBreakProps {
   palette: Palette;
   children: ReactNode;
+  mesh?: boolean;
 }
 
-export function SectionBreak({ palette, children }: SectionBreakProps) {
+export function SectionBreak({ palette, children, mesh = true }: SectionBreakProps) {
   const config = paletteConfig[palette];
 
   return (
     <section
       className={`relative left-1/2 -translate-x-1/2 w-screen ${config.bg} ${config.textClass} overflow-hidden`}
     >
-      <GradientMesh preset={config.mesh} />
+      {mesh && <GradientMesh preset={config.mesh} />}
       <WaveDivider position="top" color={config.waveFill} />
       <div className="relative mx-auto max-w-6xl px-4 py-20 lg:py-28">
         {children}

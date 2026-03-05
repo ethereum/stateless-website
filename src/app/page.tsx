@@ -42,44 +42,44 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative h-[60vh] bg-navy overflow-hidden">
-      {/* Full-bleed hero illustration */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`${basePath}/hero-image.png`}
-        alt=""
-        className="absolute inset-0 size-full object-cover object-center"
-      />
-      {/* Navy gradient overlay for text readability */}
-      <div
-        className="absolute inset-0 bg-linear-to-t from-navy/95 via-navy/50 to-transparent"
-        aria-hidden="true"
-      />
+    <section className="px-4 lg:px-8 pt-4 lg:pt-8">
+      <div className="relative h-[60vh] min-h-[400px] overflow-hidden rounded-2xl">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${basePath}/hero-image.png`}
+          alt=""
+          className="absolute inset-0 size-full object-cover object-center"
+        />
+        <div
+          className="absolute inset-0 bg-linear-to-t from-navy/95 via-navy/50 to-transparent"
+          aria-hidden="true"
+        />
 
-      <div className="relative z-10 flex h-full items-end px-8 lg:px-16 pb-12 lg:pb-16">
-        <div className="max-w-4xl">
-          <p className="text-5xl/14 lg:text-7xl/20 font-bold tracking-tight text-white mb-12 hero-enter">
-            Shaping the future of
-            <br />
-            Ethereum&apos;s state
-          </p>
-          <div className="flex flex-wrap items-center gap-4 hero-enter hero-enter-delay-2">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 bg-white text-navy font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/90 transition-all duration-300"
-            >
-              view projects
-              <ArrowRight className="size-4" />
-            </Link>
-            <a
-              href="https://stateless.fyi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
-            >
-              read the book
-              <ExternalLink className="size-4" />
-            </a>
+        <div className="relative z-10 flex h-full items-end p-8 lg:p-12">
+          <div className="max-w-4xl">
+            <p className="text-5xl/14 lg:text-7xl/20 font-bold tracking-tight text-white mb-12 hero-enter">
+              Shaping the future of
+              <br />
+              Ethereum&apos;s state
+            </p>
+            <div className="flex flex-wrap items-center gap-4 hero-enter hero-enter-delay-2">
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 bg-white text-navy font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/90 transition-all duration-300"
+              >
+                view projects
+                <ArrowRight className="size-4" />
+              </Link>
+              <a
+                href="https://stateless.fyi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-white/30 text-white font-heading text-sm/6 px-7 py-3.5 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+              >
+                read the book
+                <ExternalLink className="size-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@ function HeroSection() {
 
 function ProblemSection() {
   return (
-    <SectionBreak palette="cyan">
+    <SectionBreak palette="cyan" mesh={false}>
       <ChapterHeading
         label="the problem"
         title="Ethereum's Growing State"
@@ -164,7 +164,7 @@ function ApproachSection() {
 
 function WhyItMattersSection() {
   return (
-    <SectionBreak palette="green">
+    <SectionBreak palette="green" mesh={false}>
       <ChapterHeading
         label="why it matters"
         title="The Impact"
